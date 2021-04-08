@@ -21,4 +21,59 @@
             <servlet-name>getRequestDataServlet</servlet-name>
             <url-pattern>/getInfo.do</url-pattern>
         </servlet-mapping>
+
+        <servlet>
+            <servlet-name>getRequestHeaderServlet</servlet-name>
+            <servlet-class>com.bjsxt.servlet.GetRequestHeaderServlet</servlet-class>
+        </servlet>
+        <servlet-mapping>
+            <servlet-name>getRequestHeaderServlet</servlet-name>
+            <url-pattern>/getHeader.do</url-pattern>
+        </servlet-mapping>
+
+        <servlet>
+            <servlet-name>languageServlet</servlet-name>
+            <servlet-class>com.bjsxt.servlet.LanguageServlet</servlet-class>
+        </servlet>
+        <servlet-mapping>
+            <servlet-name>languageServlet</servlet-name>
+            <url-pattern>/language.do</url-pattern>
+        </servlet-mapping>
+
+
+        <servlet>
+            <servlet-name>respCharacterServlet</servlet-name>
+            <servlet-class>com.bjsxt.servlet.RespCharacterServlet</servlet-class>
+        </servlet>
+        <servlet-mapping>
+            <servlet-name>respCharacterServlet</servlet-name>
+            <url-pattern>/char.do</url-pattern>
+        </servlet-mapping>
+
+        <servlet>
+            <servlet-name>respByteServlet</servlet-name>
+            <servlet-class>com.bjsxt.servlet.RespByteServlet</servlet-class>
+        </servlet>
+        <servlet-mapping>
+            <servlet-name>respByteServlet</servlet-name>
+            <url-pattern>/byte.do</url-pattern>
+        </servlet-mapping>
+
+        <servlet>
+            <servlet-name>redirectServlet</servlet-name>
+            <servlet-class>com.bjsxt.servlet.RedirectServlet</servlet-class>
+        </servlet>
+        <servlet-mapping>
+            <servlet-name>redirectServlet</servlet-name>
+            <url-pattern>/redirect.do</url-pattern>
+        </servlet-mapping>
+
+        <servlet>
+            <servlet-name>downFileServlet</servlet-name>
+            <servlet-class>com.bjsxt.servlet.DownFileServlet</servlet-class>
+        </servlet>
+        <servlet-mapping>
+            <servlet-name>downFileServlet</servlet-name>
+            <url-pattern>/down.do</url-pattern>
+        </servlet-mapping>
 </web-app>
