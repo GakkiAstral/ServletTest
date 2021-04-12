@@ -9,23 +9,25 @@ import java.io.IOException;
 import java.io.PrintWriter;
 
 /**
- * 获取请求信息
+ * 全局容器
  */
-public class DemoServlet extends HttpServlet {
+public class GlobalContainerServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        this.doPost(req, resp);
+    }
+
+    @Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        //获取ServletContext对象
         ServletContext servletContext = this.getServletContext();
-        StringBuffer requestURL = req.getRequestURL();
-        String requestURI = req.getRequestURI();
-        String remoteAddr = req.getRemoteAddr();
+        servletContext.setAttribute("key1","Oldlu");
+        servletContext.setAttribute("key2","Kevin");
         PrintWriter out = resp.getWriter();
         out.println("<!DOCTYPE HTML PUBLIC '-//W3C//DTD HTML 4.0 Transitional//EN'>");
         out.println("<HTML>");
         out.println("<HEAD><TITLE> ITBZ </TITLE></HEAD>");
         out.println("<BODY>");
-        out.println("URL:"+requestURL+"<br/>");
-        out.println("URI:"+requestURI+"<br/>");
-        out.println("RemoteAddr:"+remoteAddr+"<br/>");
         String value1 = (String) servletContext.getAttribute("key1");
         String value2 = (String) servletContext.getAttribute("key2");
         out.println("Value1:"+value1+"<br/>");
@@ -34,5 +36,7 @@ public class DemoServlet extends HttpServlet {
         out.println("</HTML>");
         out.flush();
         out.close();
+
+
     }
 }
